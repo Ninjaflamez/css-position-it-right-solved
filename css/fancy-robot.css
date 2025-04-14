@@ -1,38 +1,162 @@
 .robot-container {
-}
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+        }
 
 .robot-face-shape {
+  position: relative;
+  width: 400px;
+  height: 475px;
+  margin: 250px auto;
+  padding: 250px auto;
+  border: 13px solid #070000;
+  border-radius: 25%;
+  background: #303030;
+  
 }
 
-.robot-eye-left {
+.robot-eye-left, .cross-left {
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  --c: #B90504;
+  height: 100px;
+  aspect-ratio: 1;
+  box-shadow: 0 0 0 35px inset var(--c);
+  border-image: conic-gradient(var(--c) 0 0) 50%/calc(50% - 5px);
+  clip-path: square();
+  rotate: 45deg;
+  opacity: 50%;
 }
 
-.robot-eye-right {
+.robot-eye-right, .cross-right {
+  position: absolute;
+  top: 20%;
+  left: 60%;
+  --c: #B90504;
+  height: 150px;
+  width: 100px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 4px solid var(--c);
+  background: conic-gradient(var(--c) 0 0) 50%/calc(100% - 50px) 15px no-repeat;
+  rotate: -45deg;;
 }
 
 .robot-ear-left {
+  position: absolute;
+  top: 350px;
+  left: 110px;
+  height: 15em;
+  width: 150px;
+  border: 5px solid #B90504;
+  border-radius: 50%;
+  background: linear-gradient(to right, #B90504, #070000);
 }
 
 .robot-ear-right {
+  position: absolute;
+  top: 45%;
+  right: 12%;
+  bottom: 60%;
+  left: 72%;
+  height: 125px;
+  width: 150px;
+  border: 3px solid #B90504;
+  background-image: url('https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-color: #B90504;
+
 }
 
 .robot-nose {
+  position: relative;
+  top: 45%;
+  left: 35%;
+  --s: 30px;
+  height: 100px;
+  aspect-ratio: 4/5;
+  clip-path: polygon(100% 0,calc(100% - var(--s)) 0,0 50%,calc(100% - var(--s)) 100%,100% 100%,var(--s) 50%);
+  background: #B90504;
 }
 
 .robot-teeth {
+  position: absolute;
+  top: 65%;
+  right: 27.5%;
+  --c: 85;
+  width: 175px;
+  aspect-ratio: 3/2;
+  background: #000000;
+  mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))),#0000 calc(100% - 1px),#000);
+  clip-path: ellipse(calc(var(--c)*1%) 100% at top);
 }
 
 .robot-tooth {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  --a: 90deg;
+  --s: 100px;
+  --b: 35px;
+  background: #B90504;
+  height: 35px;
+  width: 100%;
+  --_g:var(--s) repeat-x conic-gradient(from calc(var(--a)/-2) at bottom,
+  #0000,#000 1deg calc(var(--a) - 1deg),#0000 var(--a));
+  mask: 50% calc(-1*var(--b))/var(--_g) exclude,50%/var(--_g);
 }
 
 .robot-hair-style {
+  position: static;
+  top: 150px;
+  right: 0px;
+  bottom: 0px;
+  left: 420px;
+  width: 10%;
+  height: 10%;
 }
 
 .robot-hair-one {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  --n: 5;
+  --g: 30%;
+  
+  width: 165px; 
+  aspect-ratio: 1.5;
+  background: #ff0000;
+  mask:
+    linear-gradient(-90deg,#0000 var(--g),#000 0) 
+     0/calc(100%/var(--n)) intersect,
+    linear-gradient(to top left,#000 50%,#0000 0),
+    linear-gradient(to top left,#000 calc(50% + 50%/var(--n)),#0000 0) intersect,
+    repeating-conic-gradient(#000 0 25%,#0000 0 50%)
+     0 100%/calc(200%/var(--n)) calc(200%/var(--n));
 }
 
 .robot-hair-two {
+  position: absolute;
+  top: 20%;
+  right: 40%;
+  --n: 5;
+  --g: 30%;
+  width: 165px; 
+  aspect-ratio: 1.5;
+  background: #ff0000;
+  mask:
+  linear-gradient(-90deg,#0000 var(--g),#000 0) 
+  0/calc(100%/var(--n)) intersect,
+  linear-gradient(to top right,#000 50%,#0000 0),
+  linear-gradient(to top right,#000 calc(50% + 50%/var(--n)),#0000 0) intersect,
+  repeating-conic-gradient(#000 0 25%,#0000 0 50%)
+  0 100%/calc(200%/var(--n)) calc(200%/var(--n));
 }
 
-.robot-hair-three {
-}
+/*.robot-hair-three {
+}*/
