@@ -1,162 +1,198 @@
+.robot-container, * {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+z-index: -2;
+}
+
 .robot-container {
-  box-sizing: border-box;
-  padding: 0px;
-  margin: 0px;
+  position: relative;
   width: 100%;
   height: 100%;
-        }
+  background-color: #300000;
+  border: 5px solid #af0000;
+}
 
 .robot-face-shape {
-  position: relative;
-  width: 400px;
-  height: 475px;
-  margin: 250px auto;
-  padding: 250px auto;
-  border: 13px solid #070000;
-  border-radius: 25%;
-  background: #303030;
-  
+  position: absolute;
+  border: 15px 0 solid #af0000;
+  border-radius: 50px;
+  width: 500px;
+  height: 600px;
+  top: 42.5%;
+  left: 50%;
+  margin: -200px -200px auto;
+  background-color: #af0000;
+  /*linear-gradient here*/
+  background: linear-gradient(to right, #af0000, #710000, #4f0000, #300000);
+
 }
 
-.robot-eye-left, .cross-left {
-  position: absolute;
-  top: 25%;
-  left: 15%;
-  --c: #B90504;
-  height: 100px;
-  aspect-ratio: 1;
-  box-shadow: 0 0 0 35px inset var(--c);
-  border-image: conic-gradient(var(--c) 0 0) 50%/calc(50% - 5px);
-  clip-path: square();
-  rotate: 45deg;
-  opacity: 50%;
-}
-
-.robot-eye-right, .cross-right {
-  position: absolute;
-  top: 20%;
-  left: 60%;
-  --c: #B90504;
-  height: 150px;
-  width: 100px;
+.robot-eye-left {
+  --b: 35px;
+  --s: 40px;
+  --c: #000000;
+  /*height in em here*/
+  height: 6.25em;
   aspect-ratio: 1;
   border-radius: 50%;
   border: 4px solid var(--c);
-  background: conic-gradient(var(--c) 0 0) 50%/calc(100% - 50px) 15px no-repeat;
-  rotate: -45deg;;
+  box-sizing: border-box;
+  --g:conic-gradient(var(--c) 0 0) no-repeat 50%/;
+  background: 
+    var(--g) var(--b) calc(100% - 2*var(--s)),
+    var(--g) calc(100% - 2*var(--s)) var(--b);
+  rotate: 45deg; /*Nicholas stated that he knows about rotate effecting a background values in the video where this assignment was returned and not accepted.*/
+
+  position: absolute;
+  top: 25%;
+  left: 10%;
+/*opacity here*/
+  opacity: 50%;
 }
 
-.robot-ear-left {
+.robot-eye-right {
+  border: 5px solid black;
+  height: 0;
+  /*width as a percentage*/
+  width: 15%;
+  padding-bottom: 15%;
   position: absolute;
-  top: 350px;
-  left: 110px;
-  height: 15em;
-  width: 150px;
-  border: 5px solid #B90504;
-  border-radius: 50%;
-  background: linear-gradient(to right, #B90504, #070000);
+  top: 30%;
+  right: 20%;
+  rotate: 45deg; /*Nicholas stated that he knows about rotate effecting a background values in the video where this assignment was returned and not accepted.*/
+  /*background image here*/
+  background-image: url("https://i.pinimg.com/736x/60/17/9c/60179cb0c00b730fab8fc3ae3cd0c3da.jpg");
+  background-size: 100%;
+  background-position: center;
+}
+
+.ears {
+  position: absolute;
+  height: 175px;
+  width: 125px;
 }
 
 .robot-ear-right {
-  position: absolute;
-  top: 45%;
-  right: 12%;
-  bottom: 60%;
-  left: 72%;
-  height: 125px;
-  width: 150px;
-  border: 3px solid #B90504;
-  background-image: url('https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-color: #B90504;
+border: 5px solid red;
+border-radius: 50%;
+top: 300px;
+left: 760px;
+/*bottom: 10px;*/
+right: 25px;
+margin: 0 auto;
+/*solid background color here*/
+background-color: aqua;
 
+}
+
+.robot-ear-left {
+  border: 5px solid red;
+  background-color: red;
+  border-radius: 50%;
+  right: 280px;
+  top: 300px;
+  left: -275px;
+  /*bottom: 300px;*/
+  margin: 0 auto;
+  /*same shape here as the other ear but different orientation*/
+  rotate: 45deg; /*Nicholas stated that he knows about rotate effecting a background values in the video where this assignment was returned and not accepted.*/
 }
 
 .robot-nose {
-  position: relative;
-  top: 45%;
+  width: 120px;
+  aspect-ratio: 1/cos(30deg);
+  clip-path: polygon(50% 100%,100% 0,0 0);
+  background-color: #300000;
+  position: absolute;
+  top: 50%;
   left: 35%;
-  --s: 30px;
-  height: 100px;
-  aspect-ratio: 4/5;
-  clip-path: polygon(100% 0,calc(100% - var(--s)) 0,0 50%,calc(100% - var(--s)) 100%,100% 100%,var(--s) 50%);
-  background: #B90504;
 }
 
 .robot-teeth {
-  position: absolute;
-  top: 65%;
-  right: 27.5%;
-  --c: 85;
-  width: 175px;
+  --c: 66;
+  width: 250px;
   aspect-ratio: 3/2;
-  background: #000000;
-  mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))),#0000 calc(100% - 1px),#000);
+  background: #300000;
+  mask: radial-gradient(calc(var(--c)*1%) 100% at 50% calc(-100%*cos(asin(50/var(--c)))),#422a2a00 calc(100% - 1px),#000);
   clip-path: ellipse(calc(var(--c)*1%) 100% at top);
+
+  position: absolute;
+  bottom: 7.5%;
+  left: 22.5%;
 }
 
 .robot-tooth {
   position: absolute;
-  top: 20%;
-  left: 0;
-  --a: 90deg;
-  --s: 100px;
-  --b: 35px;
-  background: #B90504;
-  height: 35px;
-  width: 100%;
-  --_g:var(--s) repeat-x conic-gradient(from calc(var(--a)/-2) at bottom,
-  #0000,#000 1deg calc(var(--a) - 1deg),#0000 var(--a));
-  mask: 50% calc(-1*var(--b))/var(--_g) exclude,50%/var(--_g);
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 100px solid red;
+}
+
+.robot-tooth-one {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 100px solid red;
+  left: 165px;
+  rotate: 5deg;
 }
 
 .robot-hair-style {
-  position: static;
-  top: 150px;
-  right: 0px;
-  bottom: 0px;
-  left: 420px;
-  width: 10%;
-  height: 10%;
+position: relative;
+display: flex;
+gap: 30px;
+top: 150px;
+left: 125px;
+margin: 0 auto;
+/*border: 2px solid white;*/
+width: 300px;
 }
 
 .robot-hair-one {
-  position: absolute;
-  top: 20%;
-  left: 40%;
-  --n: 5;
-  --g: 30%;
-  
-  width: 165px; 
-  aspect-ratio: 1.5;
-  background: #ff0000;
-  mask:
-    linear-gradient(-90deg,#0000 var(--g),#000 0) 
-     0/calc(100%/var(--n)) intersect,
-    linear-gradient(to top left,#000 50%,#0000 0),
-    linear-gradient(to top left,#000 calc(50% + 50%/var(--n)),#0000 0) intersect,
-    repeating-conic-gradient(#000 0 25%,#0000 0 50%)
-     0 100%/calc(200%/var(--n)) calc(200%/var(--n));
+border: 2px solid rgb(113, 113, 113);
+width: 15px;
+height: 50px;
+background-color: rgb(113, 113, 113);
 }
 
 .robot-hair-two {
-  position: absolute;
-  top: 20%;
-  right: 40%;
-  --n: 5;
-  --g: 30%;
-  width: 165px; 
-  aspect-ratio: 1.5;
-  background: #ff0000;
-  mask:
-  linear-gradient(-90deg,#0000 var(--g),#000 0) 
-  0/calc(100%/var(--n)) intersect,
-  linear-gradient(to top right,#000 50%,#0000 0),
-  linear-gradient(to top right,#000 calc(50% + 50%/var(--n)),#0000 0) intersect,
-  repeating-conic-gradient(#000 0 25%,#0000 0 50%)
-  0 100%/calc(200%/var(--n)) calc(200%/var(--n));
+border: 2px solid rgb(113, 113, 113);
+width: 20px;
+height: 70px;
+background-color: rgb(113, 113, 113);
+left: 475px;
 }
 
-/*.robot-hair-three {
-}*/
+.robot-hair-three {
+border: 2px solid rgb(113, 113, 113);
+width: 25px;
+height: 90px;
+background-color: rgb(113, 113, 113);
+left: 525px;
+}
+
+.robot-hair-two-two {
+border: 2px solid rgb(113, 113, 113);
+width: 30px;
+height: 110px;
+background-color: rgb(113, 113, 113);
+left: 575px;
+}
+
+.robot-hair-one-two {
+border: 2px solid rgb(113, 113, 113);
+width: 35px;
+height: 130px;
+background-color: rgb(113, 113, 113);
+left: 625px;
+}
+
+.hair {
+  background: linear-gradient(to right, rgb(113, 113, 113), #000000)
+}
+/*outline is not configured into the box size*/
