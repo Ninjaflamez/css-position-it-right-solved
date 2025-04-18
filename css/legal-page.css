@@ -44,10 +44,12 @@ section {
   flex-direction: column;
   gap: 30px;
   max-width: 600px;
+  padding-bottom: 100px;
 }
 
 .document-content p {
   line-height: 28px;
+  
 }
 
 .document-content ol {

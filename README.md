@@ -69,15 +69,15 @@ This assignment should prove that a student is able to:
   - [x] Right eye
   - [x] Nose
   - [x] Mouth
-  - [] Teeth/tooth
+  - [x] Teeth/tooth
   - [] **!!!Optional** Add any other part you want.
 - [] Create unique random shapes for the following external elements of the face:
-  - [] Hair style
+  - [x] Hair style
   - [x] Left ear
   - [x] Right ear
   - [] **!!!Optional** Add any other part you want.
 - [] Shapes must follow the guidelines:
-  - [] Each shape must be unique. It is permissible to use the same shape for two paired face elements, but they must have different orientations or directions.
+  - [x] Each shape must be unique. It is permissible to use the same shape for two paired face elements, but they must have different orientations or directions.
   - [] Use the following types of shapes:
     - [x] At least one square shape
     - [x] At least one circle shape
@@ -92,7 +92,7 @@ This assignment should prove that a student is able to:
   - [x] At least one shape should have an opacity of 50% or be semi-transparent.
 - [] Position the shapes inside or outside the face shape according to the following guidelines:
   - [x] In-face elements should be positioned in relation to their static position.
-  - [] External face shapes should be positioned in relation to the robot container or the face shape.
+  - [x] External face shapes should be positioned in relation to the robot container or the face shape.
 
 `For the Legal Page exercise`
 
